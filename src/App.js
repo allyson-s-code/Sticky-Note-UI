@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import Header from "./Header.js";
 import NotesList from "./NotesList.js";
 
-/* This container component manages all of the state 
-for this application, delegating rendering logic to 
-presentational components. */
 class App extends Component {
   state = {
     notes: [
@@ -12,10 +9,10 @@ class App extends Component {
         id: Date.now(),
         title: "",
         description: "",
-        doesMatchSearch: true
-      }
+        doesMatchSearch: true,
+      },
     ],
-    searchText: ""
+    searchText: "",
   };
 
   addNote = () => {
@@ -23,7 +20,7 @@ class App extends Component {
       id: Date.now(),
       title: "",
       description: "",
-      doesMatchSearch: true
+      doesMatchSearch: true,
     };
     const newNotes = [newNote, ...this.state.notes];
     this.setState({ notes: newNotes });
@@ -67,7 +64,7 @@ class App extends Component {
     });
     this.setState({
       notes: updatedNotes,
-      searchText: newSearchText
+      searchText: newSearchText,
     });
   };
 
